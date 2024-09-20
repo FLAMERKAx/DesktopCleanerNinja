@@ -17,17 +17,27 @@ exe_type = [".exe"]
 jar_type = [".jar"]
 else_type = [".ai", ".pptx", ".veg", ".docx", ".bak", ".psd", ".mid"]
 
-desktop = r"C:\Users\FLAMERKA\Desktop"
-za_papka = r"D:\ULTRAPAPKA"
-kartinki = r"D:\a\Картинки"
-video = r"D:\a\Видео"
-zips = r"D:\a\Зипы"
-modmain = r"D:\a\модмайн"
-progi = r"D:\a\Проги"
-text = r"D:\a\текст"
-prochee = r"D:\a\прочее"
-zvuiki = r"D:\a\Звуки"
-else1 = r"D:\a\else1"
+os.makedirs('a', exist_ok=True)
+
+desktop = os.path.dirname(os.path.realpath(__file__))
+os.makedirs(r'a\Картинки', exist_ok=True)
+kartinki = f"{desktop}\a\Картинки"
+os.makedirs(r'a\Видео', exist_ok=True)
+video = f"{desktop}\a\Видео"
+os.makedirs(r'a\Зипы', exist_ok=True)
+zips = f"{desktop}\a\Зипы"
+os.makedirs(r'a\Модмайн', exist_ok=True)
+modmain = f"{desktop}\a\Модмайн"
+os.makedirs(r'a\Проги', exist_ok=True)
+progi = f"{desktop}\a\Проги"
+os.makedirs(r'a\Текст', exist_ok=True)
+text = f"{desktop}\a\Текст"
+os.makedirs(r'a\Прочее', exist_ok=True)
+prochee = f"{desktop}\a\Прочее"
+os.makedirs(r'a\Звуки', exist_ok=True)
+zvuiki = f"{desktop}\a\Звуки"
+os.makedirs(r'a\else1', exist_ok=True)
+else1 = f"{desktop}\a\else1"
 
 
 def aboba(path):
@@ -117,8 +127,7 @@ def Exit():
 
 
 root = Tk()
-root.title("DesktopCleaner v1")
-root.iconbitmap(r"C:\Users\FLAMERKA\PycharmProjects\flamerkox\venv\DCN.ico")
+root.title("DesktopCleaner v0.1")
 root.geometry('300x200+780+400')
 root.configure(background="#665873")
 btn = Button(root, text="Очистить рабочий стол", command=Clear, font="Arial, 18", bg="#463b52", fg="#7b6594")
@@ -131,8 +140,6 @@ btn1.configure(width=30)
 btn1.place(x=100, y=170)
 version = Label(root, text="v1", bg="#665873", fg="#463b52")
 version.place(x=0, y=180)
-logo = PhotoImage(file="C:\\Users\\FLAMERKA\\PycharmProjects\\flamerkox\\venv\\4.png")
-logo2 = Label(root, image=logo, bg="#665873")
 logo2.place(x=280, y=0)
 logo2.pack()
 root.resizable(False, False)
